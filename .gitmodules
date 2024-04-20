@@ -4,3 +4,6 @@
 [submodule "lib/openzeppelin-contracts"]
 	path = lib/openzeppelin-contracts
 	url = https://github.com/OpenZeppelin/openzeppelin-contracts
+[submodule "lib/router-contract"]
+	path = lib/router-contract
+	url = https://github.com/ContinuumDAO/router-contract
