@@ -7,14 +7,14 @@ import {VotesToken} from "../build/source/VotesToken.sol";
 import {MyGovernor} from "../build/source/MyGovernor.sol";
 import {C3ProposalDispatch} from "../build/source/C3ProposalDispatch.sol";
 
-import {NameWall} from "../build/destination/NameWall.sol";
+import {BasicNames} from "../build/destination/BasicNames.sol";
 
 contract TestSameChain is Test {
     VotesToken votesToken;
     MyGovernor myGovernor;
     TimelockController timelockController;
     C3ProposalDispatch c3ProposalDispatch;
-    NameWall nameWall;
+    BasicNames basicNames;
     string constant MNEMONIC = "test test test test test test test test test test test junk";
     address user;
 
@@ -39,7 +39,7 @@ contract TestSameChain is Test {
         // DEPLOY
         c3ProposalDispatch = new C3ProposalDispatch(c3callerProxy, dappID);
         // DEPLOY
-        nameWall = new NameWall();
+        basicNames = new BasicNames();
 
         // TX
         myGovernor.initializeTimelock(address(timelockController));
@@ -71,9 +71,11 @@ contract TestSameChain is Test {
         //  ||
         //  \/  Below: Directly calling the receiveProposal function on C3ProposalDispatch (for demo purposes).
 
-        address target = address(nameWall);
-        c3ProposalDispatch.receiveProposal(target, targetChainData);
-        string memory added = nameWall.wall(user);
+        address target = address(basicNames);
+        bytes memory payload = abi.encodePacked(target, targetChainData);
+
+        c3ProposalDispatch.receiveProposal(payload);
+        string memory added = basicNames.names(user);
         console.log(added);
 
         vm.stopPrank();

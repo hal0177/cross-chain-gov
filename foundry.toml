@@ -2,6 +2,7 @@
 src = "build"
 out = "out"
 libs = ["lib"]
+viaIr = true
 # optimizer = true
 # optimizer_runs = 20
 
@@ -9,8 +10,10 @@ remappings = []
 
 [rpc_endpoints]
 arbSepolia = "${ARB_SEPOLIA_RPC_URL}"
+bnbTestnet = "${BNB_TESTNET_RPC_URL}"
 
 [etherscan]
 arbSepoliaKey = { url = "https://api-sepolia.arbiscan.io/api", chain = 421614, key = "${ETHERSCAN_API_KEY}" }
+bnbTestnetKey = { url = "https://api-testnet.bscscan.com/api", chain = 97, key = "${BNB_TESTNET_API_KEY}" }
 
 # See more config options https://github.com/foundry-rs/foundry/blob/master/crates/config/README.md#all-options
