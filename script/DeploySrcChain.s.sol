@@ -24,7 +24,7 @@ contract DeploySrcChain is Script {
         // 7. Initiate timelock with Governor
         // 8. Mint tokens
 
-        address target = 0xADeE65208A9fd9d6d47AD2D8A53D7E019955d1Db;
+        address target = 0xF76e3696f15Bb55Bcd63e8ff2eCD3adA5B3Edb8f;
         address c3CallerProxy = 0x433f3275a787be38703917fF2919CeFEAd9327cD;
         uint256 dappID = 6;
         address[] memory proposerAndExecutor =  new address[](1);

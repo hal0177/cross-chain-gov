@@ -768,7 +768,7 @@ contract C3ProposalDispatch is C3CallerDapp {
         bytes calldata _data,
         bytes calldata _reason
     ) internal pure override returns (bool) {
-        return bool(_selector == ADD_NAME);
+        return true;
     }
 
     // This would be onlyGovernor in production

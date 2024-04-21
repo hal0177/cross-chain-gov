@@ -7,7 +7,7 @@ import {C3ProposalDispatch} from "../build/source/C3ProposalDispatch.sol";
 
 contract CrossChainGov is Script {
     function run() public {
-        address target = 0xADeE65208A9fd9d6d47AD2D8A53D7E019955d1Db;
+        address target = 0xF76e3696f15Bb55Bcd63e8ff2eCD3adA5B3Edb8f;
         C3ProposalDispatch c3ProposalDispatch = C3ProposalDispatch(0xf13f52085Fe8B8A0d2ebAf05d7cF4C63631E529A);
 
         uint256 deployerPrivateKey = vm.envUint("PRIVATE_KEY");
@@ -23,3 +23,9 @@ contract CrossChainGov is Script {
         vm.stopBroadcast();
     }
 }
+
+// We add a name to a contract on another chain, using the C3Caller network to transmit the  message.
+
+// This transaction is triggered on Arbitrum Sepolia.
+
+// The contract state is updated as desired on BNB Testnet.

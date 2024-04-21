@@ -7,15 +7,7 @@ contract BasicNames {
 
     event NameAdded(address _owner, string _name);
 
-    error NamingFailed(address _owner, string _name);
-
     function addName(address _owner, string memory _name) external {
-        // Create a pseudo 50% chance that it fails
-        uint256 pseudoRandom = block.timestamp % 2;
-        if (pseudoRandom > 0) {
-            names[_owner] = _name;
-        } else {
-            revert NamingFailed(_owner, _name);
-        }
+        names[_owner] = _name;
     }
 }

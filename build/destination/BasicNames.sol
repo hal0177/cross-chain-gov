@@ -3,7 +3,7 @@ pragma solidity ^0.8.19;
 
 // src/destination/BasicNames.sol
 
-// This is the target contract on another chain. For our example, this contract adds an account's name
+// This is the target contract on BNB Testnet. For our example, this contract saves an account's name.
 contract BasicNames {
     mapping(address => string) public names;
 
