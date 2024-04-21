@@ -18,6 +18,12 @@ governance votes to change state in contracts on other chains.
 
 1. Create ```Governor```, chain A
 2. Create ```VotesToken```, chain A
-3. Create ```Relayer```, chain A
+3. Create ```GovRelayer```, chain A
 4. Interface with Continuum Network
 5. Create ```Receiver```, chain B
+
+### Cross-chain Process
+
+1. Make proposal to governor
+2. votes etc.
+3. When the proposal is passed, instead of executing on source chain, it executes the tx as a C3Call.

@@ -2,6 +2,9 @@
 cache/
 out/
 
+# Flattened files
+# build/
+
 # Ignores development broadcast logs
 !/broadcast
 /broadcast/*/31337/
